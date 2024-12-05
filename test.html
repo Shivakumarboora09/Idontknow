@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kore.ai Bot</title>
+</head>
+<body>
+    <h1>Embedded Kore.ai Bot</h1>
+    
+    <!-- Iframe for embedding bot -->
+    <iframe
+        src="https://raw.githubusercontent.com/Shivakumarboora09/kore/refs/heads/main/index.html"
+        width="100%"
+        height="500px"
+        style="border:none;">
+    </iframe>
+
+    <!-- Bot Options Configuration -->
+    <script>
+        var botOptions = {
+            botInfo: {
+                name: "CORK",
+                _id: "st-3f3907c6-fec2-5740-a68c-de69bfbe4efc",
+                customData: { username: "Mohith", lang: "Chinese" },
+            },
+            clientId: "cs-52da9906-adc8-5ba1-98c1-61fae51d02b8",
+            clientSecret: "CckFnAtC6+mG23GbMNGG0zWa84VKHxrH9jQuJp0kmXw="
+        };
+
+        // Function to initialize and render the bot
+        (function() {
+            var botScript = document.createElement("script");
+            botScript.src = "https://cdn.kore.ai/websdk/9.2.0/kore-bot-sdk.min.js";
+            botScript.onload = function() {
+                KoreSDK.embed(botOptions, document.body);
+            };
+            document.head.appendChild(botScript);
+        })();
+    </script>
+</body>
+</html>
